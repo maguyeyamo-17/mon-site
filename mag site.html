@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELpressing | L'élégance commence par la propreté</title>
+    <style>
+        /* CSS : Style et Mise en page */
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #357275;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+        nav a { text-decoration: none; color: var(--primary); margin-left: 20px; font-weight: 500; }
+
+        /* Section Héro */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #2980b9; transform: scale(1.05); }
+
+        /* Services */
+        .services { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        
+        /* contact */
+        .contact { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        /* Calculateur de prix (JS Interactif) */
+        .calculator { background: var(--white); padding: 40px 5%; text-align: center; margin: 20px 5%; border-radius: 15px; }
+
+        select, input { padding: 10px; margin: 10px; border: 1px solid #ddd; border-radius: 5px; }
+
+        #total-price { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+        footer { background: var(--primary); color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">✨ MELpressing</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#tarifs">Tarifs</a>
+            <a href="tel:0123456789" class="btn">Appeler</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Le soin que vos vêtements méritent.</h1>
+        <p>Nettoyage écologique et livraison rapide à domicile.</p>
+        <a href="#tarifs" class="btn"> Bienvenue</a>
+    </section>
+
+    <section id="services" class="services">
+        <div class="card">
+            <h3>👔 Nettoyage à Sec</h3>
+            <p>Idéal pour vos costumes et pièces délicates.</p>
+        </div>
+        <div class="card">
+            <h3>🧺 Blanchisserie</h3>
+            <p>Vos chemises lavées, repassées et prêtes à porter.</p>
+        </div>
+        <div class="card">
+            <h3>🛋️ Ameublement</h3>
+            <p>Couettes, rideaux et tapis retrouvent leur éclat.</p>
+        </div>
+        <div class="card">
+            <h3>Lavage en kilo</h3>
+            <P> vetements des enfants</P>
+        </div>
+    </section>
+
+    <section id="tarifs" class="calculator">
+        <h2>Simulateur de Tarif</h2>
+        <p>Sélectionnez un article pour voir le prix estimé :</p>
+        <select id="item-select">
+            <option value="0">Choisir un article...</option>
+            <option value="1000">Chemise (1000 F)</option>
+            <option value="2500">Costume 2 pièces (2500 F)</option>
+            <option value="1500">Robe ou Kaba simple (1500 F)</option>
+            <option value="3000">Couette (3000 F)</option>
+            <option value="1500">le kilogramme (1500 F)</option
+            </select>
+        <input type="number" id="quantity" value="1" min="1" style="width: 60px;">
+        <p>Total estimé : <span id="total-price">0.00</span> F cfa</p>
+    </section>
+<section id="contact" class="contact">
+    <div class="card">
+    <h3>Téléphone: 698180655</h3>
+    <h3>Mail: maguyeyamo@gmail.com</h3>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2026 Pressing Éclat -Ancien grand Z, AMBAM</p>
+    </footer>
+
+    <script>
+        // JavaScript : Logique du calculateur
+        const select = document.getElementById('item-select');
+        const quantity = document.getElementById('quantity');
+        const display = document.getElementById('total-price');
+
+        function updatePrice() {
+            const price = parseFloat(select.value);
+            const qty = parseInt(quantity.value);
+            const total = price * qty;
+            display.innerText = total.toFixed(2);
+        }
+
+        select.addEventListener('change', updatePrice);
+        quantity.addEventListener('input', updatePrice);
+    </script>
+
+</body>
+</html>
